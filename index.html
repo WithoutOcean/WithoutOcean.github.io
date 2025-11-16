@@ -1,117 +1,462 @@
-<!-- 顶部名字 + 简短说明，可以居中一点点好看 -->
-<h1 align="center">Haiyang Wu (吴海洋)</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Name's Homepage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --primary: #6243a8;
+      --primary-light: #8b6fe0;
+      --text-main: #222222;
+      --text-muted: #555555;
+      --bg: #f5f5f8;
+      --card-bg: #ffffff;
+      --border: #dddddd;
+    }
 
-<p align="center">
-  Ph.D. Candidate @ Central South University <br/>
-  Email: 245001024@csu.edu.cn
-  WeChat:w1752436056
-</p>
+    * {
+      box-sizing: border-box;
+    }
 
-<p align="center">
-  <a href="https://github.com/WithoutOcean">GitHub</a> ·
-  <a href="https://scholar.google.com/citations?user=VzEne7oAAAAJ&hl=zh-TW">Google Scholar</a> ·
-  <a href="https://withoutocean.github.io/">Homepage</a>
-</p>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Microsoft YaHei",
+        sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
 
----
+    /* 顶部导航栏 */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
 
-## 🧑‍💻 Biography
+    .nav-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-I am a (Ph.D. / M.S. / Research) student at **[Your University / Institute]**, 
-working with **[Advisor 1]** and **[Advisor 2]**.  
-My research interests mainly lie in:
+    .site-title {
+      font-weight: 600;
+      font-size: 1rem;
+    }
 
-- Remote sensing image / video processing
-- Computer vision and deep learning
-- Vision-language models / multimodal learning
-- (Add your own topics...)
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 1rem;
+      font-size: 0.95rem;
+    }
 
-**Education**
+    nav a:hover {
+      text-decoration: underline;
+    }
 
-- Ph.D. in XXX, *[Your University]*, 20XX.09 – Now  
-- M.S. in XXX, *[Your University]*, 20XX.09 – 20XX.06  
-- B.S. in XXX, *[Your University]*, 20XX.09 – 20XX.06  
+    /* 页面整体容器 */
+    .page {
+      max-width: 1000px;
+      margin: 1.5rem auto 3rem;
+      padding: 0 1rem 2rem;
+    }
 
----
+    /* 顶部主页卡片 */
+    .hero-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      border: 1px solid var(--border);
+    }
 
-## 📰 News
+    .hero-photo {
+      flex: 0 0 230px;
+      max-width: 230px;
+    }
 
-- (2025/08) One paper **Title** was presented orally at *Conference / Journal*.  
-- (2025/07) Awarded **Some Scholarship / Award Name**.  
-- (2025/06) One paper **Title** was accepted by *Journal Name*.  
-- (…根据自己情况填几条最近 3–8 条即可…)
+    .hero-photo img {
+      width: 100%;
+      border-radius: 6px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
 
----
+    .hero-main {
+      flex: 1 1 260px;
+      min-width: 0;
+    }
 
-## 📄 Selected Publications
+    .hero-main h1 {
+      margin: 0 0 0.4rem;
+      font-size: 1.9rem;
+    }
 
-(*\* indicates equal contribution / co-first author if needed*)
+    .hero-main .subtitle {
+      margin: 0 0 0.4rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
 
-- **[Paper Title 1](#)**  
-  Your Name, Coauthor A, Coauthor B, …  
-  *Journal / Conference*, 202X.  
-  [PDF](#) | [Code](#)
+    .hero-main .info-line {
+      margin: 0.1rem 0;
+      font-size: 0.95rem;
+    }
 
-- **[Paper Title 2](#)**  
-  Your Name, Coauthor A, Coauthor B, …  
-  *Journal / Conference*, 202X.  
-  [PDF](#) | [Code](#)
+    .hero-main .affiliation {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+    }
 
-- **[Paper Title 3](#)**  
-  Your Name, …  
-  *Journal / Conference*, 202X.  
-  [PDF](#) | [Code](#)
+    .hero-main .motto {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-style: italic;
+    }
 
-> More publications can be found on my [Google Scholar](https://scholar.google.com/).
+    .hero-main .links {
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+    }
 
----
+    .hero-main .links a {
+      color: var(--primary);
+      text-decoration: none;
+      margin-right: 0.7rem;
+    }
 
-## 📦 Selected Projects
+    .hero-main .links a:hover {
+      text-decoration: underline;
+    }
 
-- **[Project Name 1](https://github.com/yourname/project1)**  
-  One-sentence description of what the project does and why it is interesting.
+    /* 各个 section */
+    section {
+      margin-top: 2rem;
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.3rem 1.5rem 1rem;
+      border: 1px solid var(--border);
+    }
 
-- **[Project Name 2](https://github.com/yourname/project2)**  
-  One-sentence description (e.g., dataset, codebase, benchmark…).
+    section h2 {
+      margin: 0 0 0.8rem;
+      font-size: 1.35rem;
+      border-bottom: 2px solid var(--primary-light);
+      padding-bottom: 0.3rem;
+    }
 
-- **[Project Name 3](https://github.com/yourname/project3)**  
-  One-sentence description.
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+      margin: 0.5rem 0 0;
+    }
 
----
+    .timeline li {
+      margin-bottom: 0.6rem;
+    }
 
-## 🧑‍⚖️ Services
+    .timeline .time {
+      font-weight: 600;
+      margin-right: 0.4rem;
+    }
 
-- Journal Reviewer:  
-  - IEEE Transactions on XXX  
-  - IEEE Transactions on YYY  
-  - Information Fusion  
-  - (…写你实际审过的期刊…)
+    .timeline .detail {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
 
-- Conference Reviewer / PC Member:  
-  - CVPR / ICCV / NeurIPS / IGARSS / 等等（按实际情况写）
+    .news-list,
+    .pub-list,
+    .simple-list {
+      margin: 0.4rem 0 0.2rem;
+      padding-left: 1.2rem;
+    }
 
----
+    .news-list li {
+      margin-bottom: 0.3rem;
+    }
 
-## 🏅 Awards & Honors
+    .pub-item {
+      margin-bottom: 0.6rem;
+    }
 
-- 20XX – National Scholarship for Graduate Students  
-- 20XX – Excellent Master Thesis Award of [Your University]  
-- 20XX – Outstanding Graduate of [Your University]  
-- (挑 3–6 个最重要的奖项即可)
+    .pub-title {
+      font-weight: 600;
+    }
 
----
+    .pub-authors,
+    .pub-venue {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
 
-## 📊 GitHub Stats (optional)
+    .pub-links a {
+      font-size: 0.9rem;
+      margin-right: 0.6rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=yourname&show_icons=true&hide_title=true" />
-</p>
+    .pub-links a:hover {
+      text-decoration: underline;
+    }
 
----
+    .tag {
+      display: inline-block;
+      background: #eee9ff;
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 0.1rem 0.6rem;
+      font-size: 0.8rem;
+      margin-right: 0.3rem;
+      margin-bottom: 0.3rem;
+    }
 
-## 📬 Contact
+    footer {
+      max-width: 1000px;
+      margin: 1.5rem auto 2rem;
+      padding: 0 1rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
 
-- Email: your_email@example.com  
-- GitHub: [https://github.com/yourname](https://github.com/yourname)  
-- Homepage: [https://your-homepage.com](https://your-homepage.com)
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
 
+    @media (max-width: 640px) {
+      nav a {
+        margin-left: 0.6rem;
+        font-size: 0.85rem;
+      }
+      .hero-main h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶部导航栏 -->
+  <header>
+    <div class="nav-inner">
+      <div class="site-title">Your Name's Homepage</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#services">Services</a>
+        <a href="#awards">Awards</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- 主页卡片 -->
+    <section id="home" class="hero-card">
+      <div class="hero-photo">
+        <!-- 换成你的照片路径，例如 img/profile.jpg -->
+        <img src="img/profile.jpg" alt="Profile photo of Your Name" />
+      </div>
+      <div class="hero-main">
+        <h1>Your Name (中文名)</h1>
+        <p class="subtitle">b. Month Year &nbsp;|&nbsp; Ph.D. Candidate at XXX University</p>
+        <p class="info-line">Email: <a href="mailto:yourname@xxx.com">yourname@xxx.com</a></p>
+
+        <p class="affiliation">
+          XXX University / School of XXX<br />
+          Institute / Lab of XXX
+        </p>
+
+        <p class="motto">🎵 Hopefully, something great will come for all of us. 🎵</p>
+
+        <p class="links">
+          <a href="https://github.com/yourname">GitHub</a>
+          <a href="https://scholar.google.com/">Google Scholar</a>
+          <a href="https://your-domain.com">Homepage</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Biography -->
+    <section id="biography">
+      <h2>Biography</h2>
+      <p>
+        Your Name is a Ph.D. candidate at <strong>XXX University</strong>, supervised by
+        <strong>Prof. A</strong> and <strong>Prof. B</strong>. His/Her research interests focus on
+        <em>remote sensing image processing, computer vision, and vision-language models</em>.
+      </p>
+
+      <ul class="timeline">
+        <li>
+          <span class="time">Ph.D.</span> in XXX, <strong>XXX University</strong>,
+          <span class="detail">Supervisor: Prof. A &amp; Prof. B, 2023.09 – Now</span>
+        </li>
+        <li>
+          <span class="time">M.S.</span> in XXX, <strong>YYY University</strong>,
+          <span class="detail">Supervisor: Prof. C, 2020.09 – 2023.06</span>
+        </li>
+        <li>
+          <span class="time">B.S.</span> in XXX, <strong>ZZZ University</strong>,
+          <span class="detail">2016.09 – 2020.06</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- News -->
+    <section id="news">
+      <h2>News</h2>
+      <ul class="news-list">
+        <li>(08/2025) The paper <strong>Paper Title A</strong> was presented orally at <em>IEEE IGARSS 2025</em>.</li>
+        <li>(07/2025) Awarded the <strong>Outstanding Master's Thesis Award</strong> of XXX University.</li>
+        <li>(06/2025) One paper <strong>Paper Title B</strong> was accepted by <em>IEEE TGRS</em>.</li>
+        <li>(02/2025) One co-authored paper <strong>Paper Title C</strong> was accepted by <em>IEEE TIP</em>.</li>
+        <li>(12/2024) Supported by the <strong>Basic Research Project for Young Scholars of NSFC</strong>.</li>
+      </ul>
+    </section>
+
+    <!-- Experience (可以放经历 / 研究方向等) -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="timeline">
+        <li>
+          <span class="time">2023.09 – Now</span>
+          <strong>Ph.D. Candidate</strong>, XXX Lab, XXX University
+          <div class="detail">
+            Research on remote sensing, computer vision, and multimodal learning.
+          </div>
+        </li>
+        <li>
+          <span class="time">2020.09 – 2023.06</span>
+          <strong>M.S. Student</strong>, YYY University
+          <div class="detail">
+            Focus on hyperspectral image processing and deep learning.
+          </div>
+        </li>
+        <li>
+          <span class="time">Internships</span>
+          <div class="detail">
+            2022 – Research Intern at Company / Institute … (fill in your own).
+          </div>
+        </li>
+      </ul>
+
+      <p style="margin-top:0.8rem;">
+        <span class="tag">Remote Sensing</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Deep Learning</span>
+        <span class="tag">Vision-Language Models</span>
+      </p>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <p><em>(* indicates equal contribution.)</em></p>
+
+      <div class="pub-list">
+        <div class="pub-item">
+          <div class="pub-title">
+            Paper Title 1: Hyperspectral Video Tracking with XXX
+          </div>
+          <div class="pub-authors">
+            Your Name, Coauthor A, Coauthor B, ...
+          </div>
+          <div class="pub-venue">
+            <em>IEEE Transactions on Image Processing</em>, 2025.
+          </div>
+          <div class="pub-links">
+            <a href="#">PDF</a>
+            <a href="#">Code</a>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            Paper Title 2: Remote Sensing Image Segmentation with XXX
+          </div>
+          <div class="pub-authors">
+            Your Name, Coauthor A, Coauthor B, ...
+          </div>
+          <div class="pub-venue">
+            <em>IEEE Transactions on Geoscience and Remote Sensing</em>, 2024.
+          </div>
+          <div class="pub-links">
+            <a href="#">PDF</a>
+            <a href="#">Code</a>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <div class="pub-title">
+            Paper Title 3: Vision-Language Models for XXX
+          </div>
+          <div class="pub-authors">
+            Your Name, Coauthor A, Coauthor B, ...
+          </div>
+          <div class="pub-venue">
+            <em>CVPR</em>, 2024.
+          </div>
+          <div class="pub-links">
+            <a href="#">PDF</a>
+            <a href="#">Project Page</a>
+          </div>
+        </div>
+      </div>
+
+      <p>
+        More publications can be found on my
+        <a href="https://scholar.google.com/">Google Scholar</a>.
+      </p>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h2>Services</h2>
+      <h3>Journal Reviewer</h3>
+      <ul class="simple-list">
+        <li>IEEE Transactions on Geoscience and Remote Sensing (TGRS)</li>
+        <li>IEEE Transactions on Image Processing (TIP)</li>
+        <li>ISPRS Journal of Photogrammetry and Remote Sensing</li>
+      </ul>
+
+      <h3>Conference Reviewer / PC Member</h3>
+      <ul class="simple-list">
+        <li>CVPR, ICCV, ECCV</li>
+        <li>NeurIPS, ICLR</li>
+        <li>IGARSS, ACMMM</li>
+      </ul>
+    </section>
+
+    <!-- Awards -->
+    <section id="awards">
+      <h2>Awards & Honors</h2>
+      <ul class="simple-list">
+        <li>2025 – Outstanding Master's Thesis Award, XXX University</li>
+        <li>2024 – National Scholarship for Graduate Students</li>
+        <li>2023 – Excellent Student Award, YYY University</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 Your Name. Last updated: 2025-11-16.
+    · <a href="#home">Back to top</a>
+  </footer>
+</body>
+</html>
